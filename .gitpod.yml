@@ -7,4 +7,4 @@ vscode:
     - octref.vetur@0.23.0:TEzauMObB6f3i2JqlvrOpA==
 
 ports:
-  - port: 8080
+  - port: 8081
