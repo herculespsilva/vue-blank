@@ -1,6 +1,6 @@
 <template>
-    <li>
-        {{curso}}
+    <li @click="itemClicado">
+        {{value}} - <slot/>
     </li>
 </template>
 
@@ -8,8 +8,12 @@
     export default {
         name: 'CursoItem',
         props: {
-            curso: String
+            value: String
+        },
+        methods: {
+            itemClicado(evento) {
+                this.$emit('click', evento);
+            }
         }
-
     }
 </script>

@@ -5,9 +5,10 @@
             <button @click="incluir">Inserir</button>
         </p>
         <ul>
-            <app-curso-item v-for="(curso, indice) in cursos" @click="excluir(indice)" :key="indice" :curso="curso.nome">
-                {{curso.nome}}
+            <app-curso-item v-for="(curso, indice) in cursos" @click="excluir(indice)" :key="indice" :value="curso.nome">
+                ({{indice}} - {{curso.nome}})
             </app-curso-item>
+            <component :is="componente" value="Fixo">( 9999 )</component>
         </ul>
     </div>
 </template>
@@ -22,6 +23,7 @@
         },
         data() {
             return {
+                componente:  'app-curso-item',
                 novo: '',
                 cursos: [
                     { nome: 'ADS'},
