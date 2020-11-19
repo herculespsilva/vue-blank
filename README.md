@@ -12,6 +12,11 @@ npm install
 npm run serve
 ```
 
+### install the persist
+```
+npm install vuex-persist
+```
+
 ### Compiles and minifies for production
 ```
 npm run build
