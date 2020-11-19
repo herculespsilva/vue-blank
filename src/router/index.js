@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Ola from '../views/Alo.vue'
+
 
 Vue.use(VueRouter)
 
@@ -9,6 +11,12 @@ Vue.use(VueRouter)
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/ola/:nome', //prop que esta em Alo.vue em script
+    name: 'ola',
+    component: Ola,
+    props: true
   },
   {
     path: '/about',
