@@ -15,7 +15,8 @@ export default new Vuex.Store({
   ],
   state: {
     numero1: 0,
-    numero2: 0
+    numero2: 0,
+    permiteNavegacao: true
   },
   getters: {
     soma (state) {
@@ -34,7 +35,11 @@ export default new Vuex.Store({
       },
       setNumero2 (state, valor) {
         state.numero2 = valor
+      },
+      alteraPermiteNavegacao (state) {
+        state.permiteNavegacao = !state.permiteNavegacao
       }
+
     },
   actions: {       //metodo assíncrono = espera um metodo terminar sua execução para rodar
       setNumero2Delay (context, valor) { //context é semelhante ao state, no entanto voltado para coisas assíncronas
