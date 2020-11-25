@@ -14,8 +14,8 @@ export default new Vuex.Store({
     vuexPersist.plugin
   ],
   state: {
-    numero1: 0,
-    numero2: 0,
+    usuario: '',
+    senha: '',
     permiteNavegacao: true
   },
   getters: {
@@ -30,6 +30,12 @@ export default new Vuex.Store({
     }
   },
   mutations: {
+      setUsuario (state, valor) {
+          state.usuario = valor;
+      },
+      setSenha(state, valor) {
+          state.senha = valor;
+      },
       setNumero1 (state, valor) {
         state.numero1 = valor
       },

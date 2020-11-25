@@ -25,6 +25,11 @@ Vue.use(VueRouter)
     }
   },
   {
+    path: '/trabalho',
+    name: 'Trabalho',
+    component: () => import('../views/Trabalho.vue')
+  },
+  {
     path: '/about',
     name: 'About',
     // route level code-splitting
