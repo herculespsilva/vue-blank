@@ -16,7 +16,7 @@
             </p>
             <button type="submit">Salvar</button>
         </form>
-        </br>
+        <br>
         <table>
             <thead>
                 <tr>
@@ -62,12 +62,12 @@
                 axios.post('trabalho', // rota responsavel
                     {                                       // essa rota espera um json, basicamente passamos como objeto parao o axios e ele monta um json como retorno
                         titulo: this.titulo,                // oque será mandado no corpo da requisição
-                        localArquivo: new Date(),           
-                        trabalhos: this.localArquivo        //conteudo dos dois input no <content>
+                        dataHoraEntrega: new Date(),           
+                        localArquivo: this.localArquivo        //conteudo dos dois input no <content>
                     },
                     {
-                        auth: {
-                            username: this.username,
+                        auth: {                             // colocar as propriedades
+                            username: this.username,        // pega usuario e senha do mapState
                             passwor: this.senha
                         }
                     }
@@ -75,9 +75,9 @@
                 .then(res => {
                     console.log(res);                   // se tudo der certo, limpa os campos
                     this.titulo = '';
-                    this.texto = '';                    // a rota retorna como uma reposta um json com o registro criado | no campo (res.data)
+                    this.localArquivo = '';                    // a rota retorna como uma reposta um json com o registro criado | no campo (res.data)
                     this.trabalhos.push(res.data);      // e insere na lista de tabalhos
-                })                                      //inserimos a res.data de forma direta, basicamente se pega esse objeto em json e faz um parse o tornando um objeto
+                })                                      //inserimos a res.data de forma direta, basicamente se pega esse objeto em json e faz um parse o tornando um objetos java script
                 .catch(error => console.log(error))
             }
         }
